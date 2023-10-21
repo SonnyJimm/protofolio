@@ -3,10 +3,11 @@
   width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-.container {
+.cards {
   width: 100vw;
   height: 80vh;
   color: white;
@@ -14,12 +15,34 @@
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
-  padding: 2rem;
   justify-content: center;
+  align-items: center;
   border-radius: 15px;
-  margin: 2rem;
 }
-.cards {
+.card {
+  width: 50rem;
+  height: 40rem;
+  display: flex;
+  position: absolute;
+  background-size: cover;
+  /* background-color:aqua; */
+  transition: all 1s;
+  justify-content: center;
+  align-items: center;
+  /* opacity: 0.5; */
+}
+.card-content{
+  z-index: 3;
+  width: 40rem;
+  height: 40rem;
+  border: 1px solid white;
+  overflow: hidden;
+  background-color: black;
+  opacity: 1;
+  display: flex;
+}
+
+/* .card {
   width: 40rem;
   height: 40rem;
   border: 1px solid white;
@@ -28,8 +51,9 @@
   position: absolute;
   background-size: cover;
   background-color: black;
-  transition:all 1s ;
-}
+  transition: all 1s;
+} */
+
 .inactive-left {
   width: 30rem;
   height: 30rem;
@@ -38,7 +62,7 @@
   left: calc(20%);
   top: calc(25%); */
   /* flex: 1; */
-  transform: translate(-25%,12%);
+  transform: translate(-25%, 3%);
   z-index: 1;
   opacity: 0.1;
   /* transition: all 1s linear; */
@@ -48,7 +72,7 @@
   width: 30rem;
   height: 30rem;
   overflow: hidden;
-  transform: translate(25%,12%);
+  transform: translate(25%, 3%);
   /* flex: 1; */
   /* transform: translate(25%); */
   /*
@@ -66,4 +90,81 @@
   /* flex: 2; */
   /* transition: all 1s ease-in; */
 }
+.card-fader {
+  z-index: 1;
+  width: 40rem;
+  height: 40rem;
+  border: 1px solid white;
+  /* overflow: hidden; */
+  display: flex;
+  position: absolute;
+  background-size: cover;
+  background-color: white;
+  transition: opacity 1500ms;
+  pointer-events: none;
+}
+.card-fader-group {
+  z-index: 1;
+  width: 40rem;
+  height: 40rem;
+  border: 1px solid white;
+  /* overflow: hidden; */
+  display: flex;
+  position: absolute;
+  background-size: cover;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 1500ms;
+  pointer-events: none;
+}
 
+.active:hover .card-fader-group {
+  opacity: 1;
+}
+
+.card-fader:nth-child(odd) {
+  animation: fade-left 3s linear infinite;
+}
+
+.card-fader:nth-child(even) {
+  animation: fade-right 3s linear infinite;
+}
+
+.card-fader:is(:nth-child(3), :nth-child(4)) {
+  animation-delay: 750ms;
+}
+
+.card-fader:is(:nth-child(5), :nth-child(6)) {
+  animation-delay: 1500ms;
+}
+
+.card-fader:is(:nth-child(7), :nth-child(8)) {
+  animation-delay: 2250ms;
+}
+@keyframes fade-left {
+  from {
+    scale: 1;
+    translate: 0%;
+    opacity: 1;
+  }
+
+  to {
+    scale: 0.8;
+    translate: -30%;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-right {
+  from {
+    scale: 1;
+    translate: 0%;
+    opacity: 1;
+  }
+
+  to {
+    scale: 0.8;
+    translate: 30%;
+    opacity: 0;
+  }
+}

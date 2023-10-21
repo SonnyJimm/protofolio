@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="app">
       <button onClick={prev}>prev</button>
-      <div className="container">
+      <div className="cards">
         <Card id={1} indexes={indexes}>
           data 1
         </Card>
@@ -48,7 +48,7 @@ function App() {
 }
 const Card = ({ id, indexes, children }) => {
   const classNameBuilder = () => {
-    let classes = "cards ";
+    let classes = "card ";
     if (indexes.current === id) {
       return classes + " active";
     }
@@ -66,11 +66,23 @@ const Card = ({ id, indexes, children }) => {
     }
   };
   return (
-    <>
-      <div key={id} className={classNameBuilder()}>
+    <div className={classNameBuilder()}>
+      <div key={id} className="card-content">
         {children}
       </div>
-    </>
+      {id === indexes.current && (
+        <div className="card-fader-group">
+          <div className="card-fader"> some elements</div>
+          <div className="card-fader"> some elements</div>
+          <div className="card-fader"> some elements</div>
+          <div className="card-fader"> some elements</div>
+          <div className="card-fader"> some elements</div>
+          <div className="card-fader"> some elements</div>
+          <div className="card-fader"> some elements</div>
+          <div className="card-fader"> some elements</div>
+        </div>
+      )}
+    </div>
   );
 };
 
