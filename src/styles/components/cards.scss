@@ -1,0 +1,126 @@
+@import "../variables/vars.scss";
+.cards {
+  width: 55vw;
+  height: 100vh;
+  color: $baseTxtColor;
+  background-color: rgb(48, 45, 45);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $baseBorderRadius;
+}
+.card {
+  width: $cardWidth;
+  height: $cardHeight;
+  display: flex;
+  position: absolute;
+  background-size: cover;
+  transition: all 500ms linear;
+  justify-content: center;
+  align-items: center;
+  &-content {
+    z-index: 3;
+    width: $cardContentWidth;
+    height: $cardContentHeight;
+    overflow: hidden;
+    border-radius: $baseBorderRadius;
+    overflow: hidden;
+    background-color: $cardBackgroundColor;
+    opacity: 1;
+    display: flex;
+  }
+  &-content-wrapper {
+    margin: $baseComponentMargin;
+  }
+}
+.inactive {
+  scale: 0.7;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0.1;
+  pointer-events: none;
+  &-left {
+    @extend .inactive;
+    transform: translate(-30%, 3%);
+  }
+  &-right {
+    @extend .inactive;
+    transform: translate(30%, 3%);
+  }
+}
+.active {
+  z-index: 2;
+}
+@mixin card-common {
+  z-index: 1;
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.card-fader {
+  @include card-common;
+  border-radius: $baseBorderRadius;
+  background-size: cover;
+  background-color: $cardFaderBackgroudColor;
+  transition: opacity 1500ms;
+}
+.card-fader-group {
+  @include card-common;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.active:hover .card-fader-group {
+  opacity: 1;
+}
+
+.card-fader:nth-child(odd) {
+  animation: fade-left $cardFaderGroupAnimationLength linear infinite;
+}
+
+.card-fader:nth-child(even) {
+  animation: fade-right $cardFaderGroupAnimationLength linear infinite;
+}
+
+.card-fader:is(:nth-child(3), :nth-child(4)) {
+  animation-delay: $cardFaderGroupAnimationLengthIteration;
+}
+
+.card-fader:is(:nth-child(5), :nth-child(6)) {
+  animation-delay: calc($cardFaderGroupAnimationLengthIteration * 2);
+}
+
+.card-fader:is(:nth-child(7), :nth-child(8)) {
+  animation-delay: calc($cardFaderGroupAnimationLengthIteration * 3);
+}
+@keyframes fade-left {
+  from {
+    scale: 1;
+    translate: 0%;
+    opacity: 1;
+  }
+
+  to {
+    scale: 0.8;
+    translate: -20%;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-right {
+  from {
+    scale: 1;
+    translate: 0%;
+    opacity: 1;
+  }
+
+  to {
+    scale: 0.8;
+    translate: 20%;
+    opacity: 0;
+  }
+}

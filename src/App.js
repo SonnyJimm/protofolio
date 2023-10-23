@@ -1,6 +1,6 @@
 import { useState } from "react";
+import "./styles/index.scss";
 import "./App.css";
-
 function App() {
   const [indexes, setIndexes] = useState({
     current: 1,
@@ -24,7 +24,9 @@ function App() {
   };
   return (
     <div className="app">
-      <button onClick={prev}>prev</button>
+      <button className="btn-left" onClick={prev}>
+        prev
+      </button>
       <div className="cards">
         <Card id={1} indexes={indexes}>
           data 1
@@ -42,7 +44,9 @@ function App() {
           data 5
         </Card>
       </div>
-      <button onClick={next}>next</button>
+      <button className="btn-right" onClick={next}>
+        next
+      </button>
     </div>
   );
 }
@@ -52,13 +56,6 @@ const Card = ({ id, indexes, children }) => {
     if (indexes.current === id) {
       return classes + " active";
     }
-    // if (indexes.previous === id) {
-    //   if (indexes.current > id) {
-    //     classes = classes + "fade-out-right ";
-    //   } else {
-    //     classes = classes + "fade-out-left ";
-    //   }
-    // }
     if (indexes.current > id) {
       return classes + "inactive-left";
     } else {
@@ -68,18 +65,18 @@ const Card = ({ id, indexes, children }) => {
   return (
     <div className={classNameBuilder()}>
       <div key={id} className="card-content">
-        {children}
+        <div className="card-content-wrapper">{children}</div>
       </div>
       {id === indexes.current && (
         <div className="card-fader-group">
-          <div className="card-fader"> some elements</div>
-          <div className="card-fader"> some elements</div>
-          <div className="card-fader"> some elements</div>
-          <div className="card-fader"> some elements</div>
-          <div className="card-fader"> some elements</div>
-          <div className="card-fader"> some elements</div>
-          <div className="card-fader"> some elements</div>
-          <div className="card-fader"> some elements</div>
+          <div className="card-fader"></div>
+          <div className="card-fader"></div>
+          <div className="card-fader"></div>
+          <div className="card-fader"></div>
+          <div className="card-fader"></div>
+          <div className="card-fader"></div>
+          <div className="card-fader"></div>
+          <div className="card-fader"></div>
         </div>
       )}
     </div>

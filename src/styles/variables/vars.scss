@@ -1,0 +1,14 @@
+$baseTxtColor: white;
+$baseBorderRadius: 15px;
+$baseComponentMargin: 1rem;
+// card related stuff
+$cardWidth: 50rem;
+$cardHeight: 40rem;
+$cardBackgroundColor: black;
+$cardFaderBackgroudColor: white;
+$cardContentWidth: 40rem;
+$cardContentHeight: 40rem;
+$cardFaderGroupAnimationLength: 3s;
+$cardFaderGroupAnimationLengthIteration: calc(
+  $cardFaderGroupAnimationLength / 4
+);
