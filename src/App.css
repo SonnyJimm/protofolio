@@ -6,42 +6,48 @@
   justify-content: center;
   flex-direction: row;
   overflow: hidden;
-}
-.btn-left {
-  width: 3rem;
-  height: 3rem;
-  background-color: transparent;
-  border-radius: 2rem;
-  border: 0;
-  transition: all 0.5s ease-in-out;
+  /* background-color: #fff; */
+  flex: 3;
 }
 
-.btn-right {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 2rem;
-  background-color: transparent;
-  border: 0;
-  transition: all 0.5s ease-in-out;
+.content {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.btn-right:hover {
-  box-shadow: 0 0 15px #fff;
-  scale: 1.2;
-  transition: all 0.5s ease-in-out;
+.card-header {
+  margin-bottom: 3rem;
+  font-size: xxx-large;
 }
-
-.btn-left:hover {
-  box-shadow: 0 0 15px #fff;
-  scale: 1.2;
-  transition: all 0.5s ease-in-out;
+.card-intro {
+  height: fit-content;
+  border-left: 0.2rem solid #4d39a6;
+  padding-left: 1rem;
 }
-.btn-left:active {
-  background-color: #81b5f9;
-  box-shadow: 0 0 15px #81b5f9;
-  transition: all 0.2s;
+.pic {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 5rem;
 }
-.btn-right:active {
-  background-color: #81b5f9;
-  box-shadow: 0 0 15px #81b5f9;
-  transition: all 0.2s;
+.card-cs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem;
+  gap: 2rem;
+}
+.card-contentb {
+  margin-left: 0.5rem;
+  margin-left: 2rem
+}
+.skill-items {
+  display: flex;
+  gap: 0.5rem;
+}
+.skill-item {
+  border-radius: 5px;
+  background-color: #353535;
+  padding: 0.3rem;;
 }

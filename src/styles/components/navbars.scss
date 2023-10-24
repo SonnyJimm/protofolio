@@ -1,0 +1,61 @@
+@import "../variables/vars.scss";
+
+.navbar {
+  flex: 1;
+  background-image: linear-gradient(to right, black, #2a0636);
+  color: $navbarTxtCollor;
+  display: flex;
+  transition: all 0.5s linear;
+  height: 100vh;
+  flex-direction: column;
+  &-socials {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  &-connect {
+    margin-right: 1rem;
+  }
+  &-items {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &-item {
+    margin: 0.5rem;
+    font-size: large;
+    font-weight: bold;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: all 200ms linear;
+  }
+  &-item:hover {
+    scale: 1.2;
+  }
+}
+
+a:visited {
+  color: $baseTxtColor;
+}
+a:active {
+  color: $baseTxtColor;
+}
+a:link {
+  color: $baseTxtColor;
+}
+.navbar:has(.navbar-item[data-color="#4d39a6"]:hover) {
+  background-image: linear-gradient(to right, black, #4d39a6);
+}
+.navbar:has(.navbar-item[data-color="#0f1a5b"]:hover) {
+  background-image: linear-gradient(to right, black, #0f1a5b);
+}
+.navbar:has(.navbar-item[data-color="#aa4111"]:hover) {
+  background-image: linear-gradient(to right, black, #aa4111);
+}
+.navbar:has(.navbar-item[data-color="#6e0353"]:hover) {
+  background-image: linear-gradient(to right, black, #6e0353);
+}
+.navbar:has(.navbar-item[data-color="#2a0636"]:hover) {
+  background-image: linear-gradient(to right, black, #2a0636);
+}

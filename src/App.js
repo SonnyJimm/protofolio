@@ -1,6 +1,11 @@
 import { useState } from "react";
 import "./styles/index.scss";
-import "./App.css";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import Navbar from "./component/navbar";
+import Card from "./component/Card";
+import IntroPage from "./page/IntroPage";
+import ExperiencePage from "./page/experiencePage";
 function App() {
   const [indexes, setIndexes] = useState({
     current: 1,
@@ -22,65 +27,40 @@ function App() {
     indexes.current = indexes.current - 1;
     setIndexes({ ...indexes });
   };
+  const jumptoIndex = (index) => {
+    indexes.current = index;
+    setIndexes({ ...indexes });
+  };
   return (
     <div className="app">
-      <button className="btn-left" onClick={prev}>
-        prev
-      </button>
-      <div className="cards">
-        <Card id={1} indexes={indexes}>
-          data 1
-        </Card>
-        <Card id={2} indexes={indexes}>
-          data 2
-        </Card>
-        <Card id={3} indexes={indexes}>
-          data 3
-        </Card>
-        <Card id={4} indexes={indexes}>
-          data 4
-        </Card>
-        <Card id={5} indexes={indexes}>
-          data 5
-        </Card>
+      <div className="content">
+        <button className="btn-left" onClick={prev}>
+          <ArrowBackIosNewIcon color="primary" />
+        </button>
+        <div className="cards">
+          <Card id={1} indexes={indexes}>
+            <IntroPage />
+          </Card>
+          <Card id={2} indexes={indexes}>
+            <ExperiencePage />
+          </Card>
+          <Card id={3} indexes={indexes}>
+            data 3
+          </Card>
+          <Card id={4} indexes={indexes}>
+            data 4
+          </Card>
+          <Card id={5} indexes={indexes}>
+            data 5
+          </Card>
+        </div>
+        <button className="btn-right" onClick={next}>
+          <ArrowForwardIosIcon color="primary" />
+        </button>
       </div>
-      <button className="btn-right" onClick={next}>
-        next
-      </button>
+      <Navbar jumptoIndex={jumptoIndex} />
     </div>
   );
 }
-const Card = ({ id, indexes, children }) => {
-  const classNameBuilder = () => {
-    let classes = "card ";
-    if (indexes.current === id) {
-      return classes + " active";
-    }
-    if (indexes.current > id) {
-      return classes + "inactive-left";
-    } else {
-      return classes + "inactive-right";
-    }
-  };
-  return (
-    <div className={classNameBuilder()}>
-      <div key={id} className="card-content">
-        <div className="card-content-wrapper">{children}</div>
-      </div>
-      {id === indexes.current && (
-        <div className="card-fader-group">
-          <div className="card-fader"></div>
-          <div className="card-fader"></div>
-          <div className="card-fader"></div>
-          <div className="card-fader"></div>
-          <div className="card-fader"></div>
-          <div className="card-fader"></div>
-          <div className="card-fader"></div>
-          <div className="card-fader"></div>
-        </div>
-      )}
-    </div>
-  );
-};
 
 export default App;

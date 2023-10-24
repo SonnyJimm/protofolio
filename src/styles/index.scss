@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  overflow: hidden;
+  background-color: #000000;
+  //   overflow: hidden
 }
 
 code {
@@ -14,5 +14,6 @@ code {
     monospace;
 }
 
-
-@import "./components/cards.scss"
+@import "./components/cards.scss";
+@import "./components/navbars.scss";
+@import "./components/btn.scss";

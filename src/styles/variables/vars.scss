@@ -1,14 +1,16 @@
-$baseTxtColor: white;
+$baseTxtColor: #c5c3c3;
 $baseBorderRadius: 15px;
 $baseComponentMargin: 1rem;
 // card related stuff
-$cardWidth: 50rem;
-$cardHeight: 40rem;
-$cardBackgroundColor: black;
-$cardFaderBackgroudColor: white;
-$cardContentWidth: 40rem;
-$cardContentHeight: 40rem;
+$cardWidth: 55rem;
+$cardHeight: 90vh;
+$cardBackgroundColor: #111010;
+$cardFaderBackgroudColor: #1f1f1e;
+$cardContentWidth: 55rem;
+$cardContentHeight: 90vh;
 $cardFaderGroupAnimationLength: 3s;
+
 $cardFaderGroupAnimationLengthIteration: calc(
   $cardFaderGroupAnimationLength / 4
 );
+$navbarTxtCollor: #fff;
