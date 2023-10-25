@@ -1,7 +1,7 @@
 import profile from "../IMG_9413.JPG";
 const IntroPage = () => {
   return (
-    <div>
+    <div className="card-wrapper">
       <h1 className="card-header">Introduction</h1>
       <div className="card-cs">
         <img className="pic" src={profile} alt="profile" />
@@ -17,31 +17,31 @@ const IntroPage = () => {
         <h2>Skillset</h2>
         <div>Programming languages</div>
         <p className="skill-items">
-          <div className="skill-item">Golang</div>
-          <div className="skill-item">Ruby</div>
-          <div className="skill-item">JavaScript</div>
-          <div className="skill-item">Java</div>
-          <div className="skill-item">Python</div>
+          <span className="skill-item">Golang</span>
+          <span className="skill-item">Ruby</span>
+          <span className="skill-item">JavaScript</span>
+          <span className="skill-item">Java</span>
+          <span className="skill-item">Python</span>
         </p>
         <div>Frameworks</div>
         <p className="skill-items">
-          <div className="skill-item">GoFiber</div>
-          <div className="skill-item">Ruby on Rails</div>
-          <div className="skill-item">Spring Boot</div>
-          <div className="skill-item">Flask</div>
+          <span className="skill-item">GoFiber</span>
+          <span className="skill-item">Ruby on Rails</span>
+          <span className="skill-item">Spring Boot</span>
+          <span className="skill-item">Flask</span>
         </p>
         <div>Libraries</div>
         <p className="skill-items">
-          <div className="skill-item">React</div>
-          <div className="skill-item">React Native</div>
+          <span className="skill-item">React</span>
+          <span className="skill-item">React Native</span>
         </p>
         <div>Database</div>
         <p className="skill-items">
-          <div className="skill-item">SQL</div>
-          <div className="skill-item">Postgresql</div>
-          <div className="skill-item">MySQL</div>
-          <div className="skill-item">NoSQL</div>
-          <div className="skill-item">MongoDB</div>
+          <span className="skill-item">SQL</span>
+          <span className="skill-item">Postgresql</span>
+          <span className="skill-item">MySQL</span>
+          <span className="skill-item">NoSQL</span>
+          <span className="skill-item">MongoDB</span>
         </p>
         <div>What Can I offer</div>
         <p>

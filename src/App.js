@@ -2,10 +2,11 @@ import { useState } from "react";
 import "./styles/index.scss";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import Navbar from "./component/navbar";
+import Navbar from "./component/Navbar";
 import Card from "./component/Card";
 import IntroPage from "./page/IntroPage";
-import ExperiencePage from "./page/experiencePage";
+import ExperiencePage from "./page/ExperiencePage";
+import ContactPage from "./page/ContanctPage";
 function App() {
   const [indexes, setIndexes] = useState({
     current: 1,
@@ -51,7 +52,7 @@ function App() {
             data 4
           </Card>
           <Card id={5} indexes={indexes}>
-            data 5
+            <ContactPage/>
           </Card>
         </div>
         <button className="btn-right" onClick={next}>
