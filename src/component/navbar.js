@@ -36,22 +36,15 @@ const NavBar = ({ jumptoIndex }) => {
         </div>
         <div
           className="navbar-item"
-          data-color="#aa4111"
-          onClick={() => jumptoIndex(3)}
-        >
-          Skill
-        </div>
-        <div
-          className="navbar-item"
           data-color="#6e0353"
-          onClick={() => jumptoIndex(4)}
+          onClick={() => jumptoIndex(3)}
         >
           About Me
         </div>
         <div
           className="navbar-item"
           data-color="#2a0636"
-          onClick={() => jumptoIndex(5)}
+          onClick={() => jumptoIndex(4)}
         >
           Contact & Resume
         </div>

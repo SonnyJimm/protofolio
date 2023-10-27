@@ -7,13 +7,14 @@ import Card from "./component/Card";
 import IntroPage from "./page/IntroPage";
 import ExperiencePage from "./page/ExperiencePage";
 import ContactPage from "./page/ContanctPage";
+import ChatPage from "./page/ChatPage";
 function App() {
   const [indexes, setIndexes] = useState({
     current: 1,
     previous: 1,
   });
   const next = () => {
-    if (indexes.current === 5) {
+    if (indexes.current === 4) {
       return;
     }
     indexes.previous = indexes.current;
@@ -46,13 +47,10 @@ function App() {
             <ExperiencePage />
           </Card>
           <Card id={3} indexes={indexes}>
-            data 3
+            <ChatPage />
           </Card>
           <Card id={4} indexes={indexes}>
-            data 4
-          </Card>
-          <Card id={5} indexes={indexes}>
-            <ContactPage/>
+            <ContactPage />
           </Card>
         </div>
         <button className="btn-right" onClick={next}>
