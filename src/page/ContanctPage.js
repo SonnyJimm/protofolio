@@ -8,7 +8,7 @@ const defaultUser = {
   email: "",
   name: "",
   subject: "",
-  content: ""
+  content: "",
 };
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
