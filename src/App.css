@@ -1,15 +1,3 @@
-.app {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  overflow: hidden;
-  font-size: medium;
-  /* background-color: #fff; */
-  flex: 3;
-}
 
 .content {
   flex: 3;
@@ -18,67 +6,12 @@
   align-items: center;
   position: relative;
 }
-.card-header {
-  margin-bottom: 3rem;
-  font-size: xxx-large;
-}
-.card-intro {
-  height: fit-content;
-  border-left: 0.2rem solid #4d39a6;
-  padding-left: 1rem;
-}
-.pic {
-  width: 7rem;
-  height: 7rem;
-  border-radius: 5rem;
-}
-.card-cs {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 2rem;
-  gap: 2rem;
-}
 .card-wrapper {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.card-contentb {
-  flex: 1;
-  margin-left: 0.5rem;
-  padding-right: 2rem;
-  overflow-y: scroll;
-}
-.skill-items {
-  display: flex;
-  gap: 0.5rem;
-}
-.skill-item {
-  border-radius: 5px;
-  background-color: #353535;
-  padding: 0.3rem;
-}
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 2px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 .input {
   border-radius: 10px;
   height: 2rem;
@@ -174,28 +107,5 @@
   font-weight: normal;
   /* overflow-y: scroll; */
 }
-.input-box{
-  display: flex;
-  flex: 1;
-  margin-left: 0.5rem;
-  margin-right: 2rem;
-  margin-bottom: 0.5rem;
-  gap: 0.5rem;
-}
-.input-txts{
-  flex: 9;
-  border-radius: 15px;
-  background: #161515;
-  padding: 1rem; 
-  font-family: inherit;
-  font-size: inherit;
-  color: white;
-}
-.send{
-  flex: 1;
-  color: white;
-  border-radius: 15px;
-  background-color: #81b5f9;
-  font-family: inherit;
-  font-size: inherit;
-}
+
+

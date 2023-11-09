@@ -2,6 +2,7 @@
 
 .cards {
   width: 55vw;
+  max-width: 1200px;
   height: 80vh;
   color: $baseTxtColor;
   box-sizing: border-box;
@@ -12,120 +13,168 @@
   border-radius: $baseBorderRadius;
 }
 .card {
-  width: $cardWidth;
-  height: $cardHeight;
   display: flex;
-  position: absolute;
-  background-size: cover;
-  transition: all 500ms linear;
-  justify-content: center;
-  align-items: center;
-  &-content {
-    z-index: 3;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    font-weight: bold;
-    line-height: 1.5rem;
-    width: $cardContentWidth;
-    height: $cardContentHeight;
-    border-radius: $baseBorderRadius;
-    // overflow: hidden;
-    background-color: $cardBackgroundColor;
-    opacity: 1;
-    display: flex;
-  }
-  &-content-wrapper {
-    display: flex;
-    margin: $baseComponentMargin;
-  }
+  font-weight: bold;
+  line-height: 1.5rem;
 }
-.inactive {
-  scale: 0.7;
-  overflow: hidden;
-  z-index: 1;
-  opacity: 0.1;
-  pointer-events: none;
-  &-left {
-    @extend .inactive;
-    transform: translate(-30%, 3%);
-  }
-  &-right {
-    @extend .inactive;
-    transform: translate(30%, 3%);
-  }
-}
-.active {
-  z-index: 2;
-}
-@mixin card-common {
-  z-index: 1;
+@mixin card-dim {
   width: $cardContentWidth;
   height: $cardContentHeight;
-  border-radius: $baseBorderRadius;
-  display: flex;
-  position: absolute;
-  pointer-events: none;
 }
-.card-fader {
-  @include card-common;
-  // border-radius: $baseBorderRadius;
-  background-size: cover;
-  background-color: $cardFaderBackgroudColor;
-  transition: opacity 1500ms;
-}
-.card-fader-group {
-  @include card-common;
-  opacity: 0;
-  transition: opacity 1s;
-}
+@media only screen and (min-width: 801px) {
+  .card {
+    width: $cardWidth;
+    height: $cardHeight;
+    position: absolute;
+    background-size: cover;
+    overflow: hidden;
+    transition: all 500ms linear;
+    justify-content: center;
+    align-items: center;
+    &-content {
+      @include card-dim;
+      z-index: 3;
+      padding-right: 2rem;
+      padding-left: 2rem;
+      border-radius: $baseBorderRadius;
+      background-color: $cardBackgroundColor;
+      opacity: 1;
+      display: flex;
+    }
+    &-content-wrapper {
+      display: flex;
+      margin: $baseComponentMargin;
+    }
+  }
+  .inactive {
+    scale: 0.7;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0.1;
+    pointer-events: none;
+    &-left {
+      @extend .inactive;
+      transform: translate(-30%, 3%);
+    }
+    &-right {
+      @extend .inactive;
+      transform: translate(30%, 3%);
+    }
+  }
+  .active {
+    z-index: 2;
+  }
+  @mixin card-common {
+    z-index: 1;
+    border-radius: $baseBorderRadius;
+    display: flex;
+    position: absolute;
+    pointer-events: none;
+  }
+  .card-fader {
+    @include card-common;
+    @include card-dim;
+    background-size: cover;
+    background-color: $cardFaderBackgroudColor;
+    transition: opacity 1500ms;
+  }
+  .card-fader-group {
+    @include card-common;
+    @include card-dim;
+    opacity: 0;
+    transition: opacity 1s;
+  }
 
-.active:hover .card-fader-group {
-  opacity: 1;
-}
-
-.card-fader:nth-child(odd) {
-  animation: fade-left $cardFaderGroupAnimationLength linear infinite;
-}
-
-.card-fader:nth-child(even) {
-  animation: fade-right $cardFaderGroupAnimationLength linear infinite;
-}
-
-.card-fader:is(:nth-child(3), :nth-child(4)) {
-  animation-delay: $cardFaderGroupAnimationLengthIteration;
-}
-
-.card-fader:is(:nth-child(5), :nth-child(6)) {
-  animation-delay: calc($cardFaderGroupAnimationLengthIteration * 2);
-}
-
-.card-fader:is(:nth-child(7), :nth-child(8)) {
-  animation-delay: calc($cardFaderGroupAnimationLengthIteration * 3);
-}
-@keyframes fade-left {
-  from {
-    scale: 1;
-    translate: 0%;
+  .active:hover .card-fader-group {
     opacity: 1;
   }
 
-  to {
-    scale: 0.8;
-    translate: -20%;
-    opacity: 0;
+  .card-fader:nth-child(odd) {
+    animation: fade-left $cardFaderGroupAnimationLength linear infinite;
+  }
+
+  .card-fader:nth-child(even) {
+    animation: fade-right $cardFaderGroupAnimationLength linear infinite;
+  }
+
+  .card-fader:is(:nth-child(3), :nth-child(4)) {
+    animation-delay: $cardFaderGroupAnimationLengthIteration;
+  }
+
+  .card-fader:is(:nth-child(5), :nth-child(6)) {
+    animation-delay: calc($cardFaderGroupAnimationLengthIteration * 2);
+  }
+
+  .card-fader:is(:nth-child(7), :nth-child(8)) {
+    animation-delay: calc($cardFaderGroupAnimationLengthIteration * 3);
+  }
+  @keyframes fade-left {
+    from {
+      scale: 1;
+      translate: 0%;
+      opacity: 1;
+    }
+
+    to {
+      scale: 0.8;
+      translate: -20%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-right {
+    from {
+      scale: 1;
+      translate: 0%;
+      opacity: 1;
+    }
+
+    to {
+      scale: 0.8;
+      translate: 20%;
+      opacity: 0;
+    }
   }
 }
 
-@keyframes fade-right {
-  from {
-    scale: 1;
-    translate: 0%;
-    opacity: 1;
+@media only screen and (max-width: 1250px) and (min-width: 801px) {
+  .cards {
+    width: 80vw;
+    height: 90vh;
   }
-
-  to {
-    scale: 0.8;
-    translate: 20%;
-    opacity: 0;
+  @mixin card-dim {
+    width: 80vw;
+    height: 85vh;
+  }
+  .card {
+    @include card-dim();
+    &-content {
+      @include card-dim;
+    }
+  }
+  .card-fader {
+    @include card-dim;
+  }
+  .card-fader-group {
+    @include card-dim;
+  }
+}
+@media only screen and (max-width: 800px) and (min-width: 0px) {
+  .cards {
+    width: 100%;
+    height: 90vh;
+    flex-direction: column;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .card {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 2rem;
+    position: static;
+    &-content {
+      background-color: black;
+    }
   }
 }

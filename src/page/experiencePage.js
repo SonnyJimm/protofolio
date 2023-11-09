@@ -1,23 +1,13 @@
 const ExperiencePage = () => {
   return (
-    <div className="card-wrapper">
-      <h1 className="card-header">Professional Experience</h1>
-      {/* <div className="card-cs">
-        <img className="pic" src={profile} alt="profile" />
-        <div className="card-intro">
-          <div>
-            My name is Tserenpuntsag Zorigt (Jimmy). Im a fullstack developer
-            with 2 years of experience focusing on Back-end implementation. I
-            enjoy experimenting with all layers of the stack.
-          </div>
-        </div>
-      </div> */}
-      <div className="card-contentb">
+    <div className="page-wrapper">
+      <h1 className="page-header">Professional Experience</h1>
+      <div className="page-content">
         <div>Zamdaa LLC 2021-2022 Backend developer</div>
         <p>
           An online platform connecting car renters with car rental businesses
         </p>
-        <ul className="list-items">
+        <ul className="page-experience-list-items">
           <li>
             Normalized previous database overhauled the relations of the tables,
             indexing search fields resulting 20% faster query time and
@@ -60,7 +50,7 @@ const ExperiencePage = () => {
           Provides web marketing, web system development, and smartphone
           application development services.
         </p>
-        <ul className="list-items">
+        <ul className="page-experience-list-items">
           <li>
             Spearheaded the development of a dynamic blog post platform during
             the internship, enabling users to submit multimedia content,
@@ -83,7 +73,7 @@ const ExperiencePage = () => {
           Provides web marketing, web system development, and smartphone
           application development services.
         </p>
-        <ul className="list-items">
+        <ul className="page-experience-list-items">
           <li>
             Contributed in the development of a streamlined POS system enhancing
             cashier efficiency and customer service through collaborative

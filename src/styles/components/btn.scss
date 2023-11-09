@@ -26,3 +26,8 @@
   box-shadow: 0 0 15px #81b5f9;
   transition: all 0.2s;
 }
+@media only screen and (max-width: 800px) and (min-width: 0px) {
+  .btn{
+    display: none;
+  }
+}

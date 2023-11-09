@@ -1,19 +1,19 @@
 import profile from "../IMG_9413.JPG";
 const IntroPage = () => {
   return (
-    <div className="card-wrapper">
-      <h1 className="card-header">Introduction</h1>
-      <div className="card-cs">
-        <img className="pic" src={profile} alt="profile" />
-        <div className="card-intro">
+    <div className="page-wrapper">
+      <h1 className="page-header">Introduction</h1>
+      <div className="page-intro">
+        <img className="page-intro-profile" src={profile} alt="profile" />
+        <div className="page-intro-content">
           <div>
             My name is Tserenpuntsag Zorigt (Jimmy). Im a fullstack developer
-            with 2 years of experience focusing on Back-end implementation. I
+            with 2 years  of experience focusing on Back-end implementation. I
             enjoy experimenting with all layers of the stack.
           </div>
         </div>
       </div>
-      <div className="card-contentb">
+      <div className="page-content">
         <h2>Skillset</h2>
         <div>Programming languages</div>
         <p className="skill-items">

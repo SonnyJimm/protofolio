@@ -34,7 +34,8 @@ function App() {
     setIndexes({ ...indexes });
   };
   return (
-    <div className="app">
+    <div className="container">
+      <Navbar jumptoIndex={jumptoIndex} />
       <div className="content">
         <button className="btn-left" onClick={prev}>
           <ArrowBackIosNewIcon color="primary" />
@@ -57,7 +58,28 @@ function App() {
           <ArrowForwardIosIcon color="primary" />
         </button>
       </div>
-      <Navbar jumptoIndex={jumptoIndex} />
+      {/* <div className="content">
+        <button className="btn-left" onClick={prev}>
+          <ArrowBackIosNewIcon color="primary" />
+        </button>
+        <div className="cards">
+          <Card id={1} indexes={indexes}>
+            <IntroPage />
+          </Card>
+          <Card id={2} indexes={indexes}>
+            <ExperiencePage />
+          </Card>
+          <Card id={3} indexes={indexes}>
+            <ChatPage />
+          </Card>
+          <Card id={4} indexes={indexes}>
+            <ContactPage />
+          </Card>
+        </div>
+        <button className="btn-right" onClick={next}>
+          <ArrowForwardIosIcon color="primary" />
+        </button>
+      </div> */}
     </div>
   );
 }

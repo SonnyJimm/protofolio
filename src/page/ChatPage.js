@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MuiAlert from "@mui/material/Alert";
-import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
+import * as React from "react";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -77,15 +77,15 @@ const ChatPage = () => {
     })();
   };
   return (
-    <div className="card-wrapper">
-      <h1 className="card-header">Chat-gpt plugin</h1>
-      <p className="card-content-insight">
+    <div className="page-wrapper">
+      <h1 className="page-header">Chat-gpt plugin</h1>
+      <p className="page-form-insight">
         This is lambda function sending the input to chat-gpt. I have given a
-        small background of myself to chay-gpt and if you have some questions
+        small background of myself to chat-gpt and if you have some questions
         about my experience feel free to ask here or you can ask through
         directly through the contact page or through LinkedIn
       </p>
-      <div className="card-contentb-chat">
+      <div className="page-form-chat">
         {converstation.map((content, id) => {
           return content.type === "gpt" ? (
             <div className="chat-gpt" key={id * 30}>

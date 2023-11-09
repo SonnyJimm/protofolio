@@ -1,20 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #000000;
-  //   overflow: hidden
-  font-size: 62.5%;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
+@import "./base.scss";
 @import "./components/cards.scss";
 @import "./components/navbars.scss";
 @import "./components/btn.scss";
+@import "./components/skill.scss";
+@import "./components/page-common.scss";
+@import "./components/form.scss";

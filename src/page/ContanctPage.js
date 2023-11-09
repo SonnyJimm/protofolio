@@ -60,8 +60,6 @@ const ContactPage = () => {
       return;
     }
     try {
-      // this is actually so dumb but i only have 2 end points so yeah imma roll with it
-      // but in future imma fix it
       await fetch(
         "https://9htulh0fpg.execute-api.us-east-1.amazonaws.com/api/contact",
         {
@@ -84,9 +82,9 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="card-wrapper">
-      <h1 className="card-header">Contact & Resume</h1>
-      <div className="card-contentb">
+    <div className="page-wrapper">
+      <h1 className="page-header">Contact & Resume</h1>
+      <div className="page-content">
         <p>
           If you want to view my resume click{" "}
           <a href="https://drive.google.com/file/d/1xqI6ceCjAhTPAMhtlW3UO6wI4AGPbZzC/view?usp=sharing">
@@ -151,4 +149,5 @@ const ContactPage = () => {
     </div>
   );
 };
+
 export default ContactPage;
